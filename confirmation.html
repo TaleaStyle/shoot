@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminbestätigung</title>
+    <link rel="stylesheet" href="chatgptStyle.css">
+</head>
+<body>
+    <div class="confirmation-container">
+        <h1>Terminbestätigung</h1>
+        <p>Bitte überprüfen Sie Ihre Angaben:</p>
+        
+        <div class="details">
+            <p><strong>Name:</strong> <span id="name"></span></p>
+            <p><strong>Datum:</strong> <span id="date"></span></p>
+            <p><strong>Uhrzeit:</strong> <span id="time"></span></p>
+            <p><strong>E-Mail:</strong> <span id="email"></span></p>
+            <p><strong>Telefonnummer:</strong> <span id="phone"></span></p>
+            <p><strong>Nachricht:</strong> <span id="message"></span></p>
+        </div>
+        
+        <button onclick="confirmAppointment()">Bestätigen</button>
+        <button onclick="window.history.back()">Zurück</button>
+    </div>
+
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            document.getElementById("name").textContent = params.get("name") || "-";
+            document.getElementById("date").textContent = params.get("date") || "-";
+            document.getElementById("time").textContent = params.get("time") || "-";
+            document.getElementById("email").textContent = params.get("email") || "-";
+            document.getElementById("phone").textContent = params.get("phone") || "-";
+            document.getElementById("message").textContent = params.get("message") || "-";
+        }
+        
+        function confirmAppointment() {
+            alert("Ihr Termin wurde erfolgreich bestätigt!");
+            window.location.href = "home.html"; // Zurück zur Startseite
+        }
+        
+        window.onload = getQueryParams;
+    </script>
+</body>
+</html>

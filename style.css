@@ -1,0 +1,843 @@
+
+  /* ==========================================================================
+   TABLE OF CONTENTS
+   ==========================================================================
+   1. IMPORTS
+   2. ROOT VARIABLES
+   3. GLOBAL STYLES
+   4. NAVBAR STYLING
+   5. DROPDOWN STYLING
+   6. HAMBURGER MENU
+   7. HEADER-TEXT STYLING
+   8. HERO SECTION STYLES
+   9. BILDER-GRID STYLES
+   10. CONTACT FORM STYLES
+   11. CONTACT INFO STYLES
+   12. FOOTER STYLES
+   13. KALENDER STYLES
+   14. TERMIN BUCHUNG STYLES
+   15. FREIE TERMINE STYLES
+   16. BUCHUNGSFORMULAR STYLES
+   17. RESPONSIVE DESIGN
+   ========================================================================== */
+
+/* ==================== */
+/* 1. IMPORTS */
+/* ==================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap');
+
+/* ==================== */
+/* 2. ROOT VARIABLES */
+/* ==================== */
+
+:root {
+    --fs-main: #050C0D;
+    --fs-second: #404040;
+    --fs-third: #A6A6A6;
+    --fs-fourth: #F2F2F2;
+    --fs-success: #198754;
+    --fs-danger: #dc3545;
+}
+
+/* ==================== */
+/* 3. GLOBAL STYLES */
+/* ==================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    margin: 0;
+    color: var(--fs-main);
+}
+
+/* ==================== */
+/* 4. NAVBAR STYLING */
+/* ==================== */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: var(--fs-main);
+    color: var(--fs-fourth);
+}
+
+/* Navbar Branding */
+.cameraicon {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Zentriert das Icon vertikal */
+}
+
+.navbar-brand {
+    font-family: "Baskervville", serif;
+    margin-left: 10px;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* SVG Camera Icon */
+.bi-camera2 {
+    width: 35px;
+    height: auto; /* Behält das Seitenverhältnis */
+}
+
+/* Navigation Links */
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links a {
+    color: var(--fs-fourth);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* ==================== */
+/* 5. DROPDOWN STYLING */
+/* ==================== */
+
+.dropup {
+    position: relative;
+}
+
+.dropbtn {
+    background: none;
+    border: none;
+    color: var(--fs-fourth);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.dropup-content {
+    margin-top: 18px;
+    display: none;
+    position: absolute;
+    background-color: var(--fs-main);
+    min-width: 180px;
+    box-shadow: 0px px 1px var(--fs-fourth);
+    z-index: 1000;
+}
+
+.dropup-content a {
+    color: var(--fs-fourth);
+    padding: 10px;
+    text-decoration: none;
+}
+
+.dropup:hover .dropup-content {
+    display: flex;
+    border: 0.2px solid var(--fs-fourth);
+    padding: 10px;
+    flex-direction: column;
+    background: var(--fs-main);
+    height: auto;
+}
+
+/* ==================== */
+/* 6. HAMBURGER MENU */
+/* ==================== */
+
+.hamburger-menu {
+    font-size: 2rem;
+    cursor: pointer;
+    display: none; /* Standardmäßig versteckt, außer auf kleineren Bildschirmen */
+}
+
+.nav-toggle {
+    display: none;
+}
+
+/* ==================== */
+/* 7. HEADER-TEXT STYLING */
+/* ==================== */
+
+.header-text {
+    border-top: var(--fs-fourth) solid;
+    background-image: url('assetes/akt_002.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    padding-bottom: 100px;
+}
+
+/* ==================== */
+/* 8. HERO SECTION STYLES */
+/* ==================== */
+
+.hero {
+    background-image: url('assets/home_001.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--fs-fourth);
+    text-align: center;
+    padding: 100px 0;
+    width: 100%;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    background-blend-mode: overlay;
+}
+
+.hero .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+    font-family: Baskervville;
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+/* ==================== */
+/* 9. BILDER-GRID STYLES */
+/* ==================== */
+
+.bilder-grid-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.bilder-grid-section h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--fs-fourth);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item {
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* ==================== */
+/* 10. CONTACT FORM STYLES */
+/* ==================== */
+.contact-form-section h2 {
+    color: var(--fs-second);
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.contact-form-section {
+    margin-top: 50px;
+    padding: 50px 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 2px 2px var(--fs-main);
+    
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+/* Stellt sicher, dass beide Inputs in einer Zeile sind */
+.form-group {
+    flex: 1;
+}
+
+
+
+
+
+
+.form-group label {
+    color: var(--fs-second);
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--fs-third);
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.contact-form button[type="submit"] {
+    background-color: var(--fs-second);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto 0;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: var(--fs-success);
+    font-size: 1.2em;
+}
+
+.form-terms {
+    font-size: 0.8em;
+    color: var(--fs-second);
+    margin-top: 10px;
+}
+
+/* ==================== */
+/* 11. CONTACT INFO STYLES */
+/* ==================== */
+
+.contact-info {
+    padding: 50px 20px;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-info h2 {
+    font-family: "Baskervville", serif;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.contact-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.contact-image img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.contact-details {
+    flex: 1;
+    text-align: start; 
+}
+
+.contact-details a {
+    text-decoration: none;
+    color: var(--fs-second); /* Setzt eine blaue Farbe für Links */
+    font-weight: bold; /* Macht den Text fetter */
+    transition: color 0.3s ease; /* Weicher Farbwechsel beim Hover */
+}
+
+.contact-details a:hover {
+    color: var(--fs-main); /* Dunklere Farbe beim Darüberfahren */
+}
+
+
+.contact-details h3 {
+    font-family: "Baskervville", serif;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.contact-details p {
+    margin-bottom: 8px;
+}
+
+/* ==================== */
+/* 12. FOOTER STYLES */
+/* ==================== */
+
+footer {
+    margin-top: 50px;
+    background-color: var(--fs-main);
+    color: var(--fs-fourth);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.footer-nav li {
+    margin: 0 15px;
+}
+
+.footer-nav a {
+    color: var(--fs-fourth);
+    text-decoration: none;
+}
+
+.footer-copyright {
+    font-size: 0.8em;
+    color: var(--fs-fourth);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--fs-fourth);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.back-to-top:hover {
+    opacity: 1;
+}
+
+.back-to-top a {
+    color: var(--fs-fourth);
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+/* ==================== */
+/* 13. KALENDER STYLES */
+/* ==================== */
+
+.calendar {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px var(--fs-main);
+}
+
+.calendar-header {
+    font-family: "Baskervville", serif;
+    font-size: large;
+    display: flex;
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--fs-second);
+    border-bottom: 1px solid #eee;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: var(--fs-fourth);
+}
+
+.calendar-header button:hover {
+    color: var(--fs-main);
+    font-size: 1.5em;
+}
+
+#month-year {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--fs-fourth);
+}
+
+.calendar-body {
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.calendar-weekdays,
+.calendar-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+}
+
+.calendar-weekdays div {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--fs-main);
+    font-weight: bold;
+    padding: 5px 0;
+}
+
+.calendar-dates div {
+    text-align: center;
+    padding: 6px 0;
+    border-radius: 3px;
+    cursor: pointer;
+    color: var(--fs-second);
+}
+
+.calendar-dates div:hover {
+    background-color: var(--fs-third);
+}
+
+/* ==================== */
+/* 14. KALENDER DATUM STATUS */
+/* ==================== */
+
+.current-date {
+    color: white;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.1rem;
+    border: 1px solid var(--fs-third);
+    font-weight: bold;
+}
+
+.last-date {
+    color: var(--fs-third) !important;
+    font-weight: 300;
+    text-decoration: line-through;
+}
+
+.holiday-date {
+    font-family: "Raleway", serif;
+    font-weight: bold;
+    cursor: not-allowed;
+}
+
+.available-date {
+    color: var(--fs-main) !important;
+}
+
+.unavailable-date {
+    color: var(--fs-third) !important;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.fully-booked {
+    color: var(--fs-danger) !important;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* ==================== */
+/* 15. HERVORHEBUNG DES AUSGEWÄHLTEN DATUMS */
+/* ==================== */
+
+.selected {
+    background-color: var(--fs-second) !important;
+    color: white !important;
+    font-size: 1.2em;
+    font-family: "Raleway", serif;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.selected-available-date {
+    background-color: var(--fs-third) !important;
+    color: white !important;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* ==================== */
+/* 16. TERMIN BUCHUNG STYLES */
+/* ==================== */
+
+.alert-fullyBooked {
+    padding: 10px;
+    margin-top: 15px;
+    color: var(--fs-danger);
+    text-align: center;
+    font-weight: bold;
+}
+
+.termin-slot {
+    padding: 10px;
+    background: var(--fs-fourth);
+    border-radius: 5px;
+    text-align: center;
+    margin: 5px 0;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.termin-slot:hover {
+    background: var(--fs-second);
+    color: white;
+}
+
+.termin-slot.selected {
+    background: var(--fs-success);
+    color: white;
+}
+
+.termin-slot.booked {
+    background: var(--fs-third);
+    color: white;
+    cursor: not-allowed;
+}
+
+/* ==================== */
+/* 17. FREIE TERMINE STYLES */
+/* ==================== */
+
+.freienTermine {
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    color: var(--fs-second);
+    font-size: 0.9em;
+    max-width: 600px;
+}
+
+/* ==================== */
+/* 18. BUCHUNGSFORMULAR STYLES */
+/* ==================== */
+
+#booking-form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px var(--fs-main);
+    text-align: left;
+}
+
+#booking-form h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--fs-second);
+}
+
+#booking-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--fs-second);
+}
+
+#booking-form input[type="text"],
+#booking-form input[type="email"],
+#booking-form input[type="tel"],
+#booking-form select,
+#booking-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+    font-family: "Baskervville", serif;
+}
+
+#booking-form select {
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 16px;
+    padding-right: 30px;
+}
+
+#booking-form textarea {
+    resize: vertical;
+}
+
+#booking-form button[type="submit"] {
+    background-color: var(--fs-second);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto 0;
+}
+
+#booking-form button[type="submit"]:hover {
+    background-color: var(--fs-success);
+    font-size: 1.2em;
+}
+
+#booking-form .alert-danger,
+#booking-form .alert-success {
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#booking-form .alert-danger {
+    color: var(--fs-danger);
+}
+
+#booking-form .alert-success {
+    background-color: var(--fs-fourth);
+    color: var(--fs-success);
+    border: 1px solid var(--fs-second);
+}
+
+/* ==================== */
+/* 19. RESPONSIVE DESIGN */
+/* ==================== */
+
+@media screen and (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        text-align: left;
+        align-items: flex-start;
+
+    }
+
+    .contact-image img {
+        display: block;
+        margin: 0 auto;
+    }
+    
+    
+    .contact-info h2 {
+        font-family: "Baskervville", serif;
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+        text-align: left;
+    }
+
+    .form-row {
+        flex-direction: column; /* Stapelt die Inputs untereinander */
+        gap: 10px;
+    }
+
+    .contact-form {
+        text-align: left; /* Falls die Eingabefelder nicht mittig sein sollen */
+    }
+
+    .form-group {
+        width: 100%;
+    }
+    /* Navbar für mobile Geräte */
+    .navbar {
+        flex-direction: column; /* Stapelt die Elemente untereinander */
+        align-items: flex-start; /* Richtet die Elemente am Anfang aus */
+    }
+
+    .cameraicon {
+        margin-bottom: 10px; /* Fügt etwas Abstand hinzu */
+    }
+
+    .navbar-links {
+        display: none; /* Versteckt die Links standardmäßig */
+        flex-direction: column; /* Stapelt die Links untereinander */
+        width: 100%; /* Nimmt die volle Breite ein */
+    }
+
+    .navbar-links.active {
+        display: flex; /* Zeigt die Links, wenn die Klasse 'active' hinzugefügt wird */
+    }
+
+    .navbar-links a {
+        padding: 10px; /* Fügt etwas Abstand um die Links hinzu */
+        text-align: center; /* Zentriert den Text */
+    }
+
+    .hamburger-menu {
+        display: block; /* Zeigt das Hamburger-Menü */
+        position: absolute; /* Positioniert es oben rechts */
+        top: 10px;
+        right: 10px;
+    }
+}
+
